@@ -11,15 +11,20 @@
 
   if (!isset($_SESSION['login'])  or !isset($_SESSION['senha']) or ($_SESSION['nivel_acesso']!=$nivel)) {
     session_destroy();
-    echo ' <script type = "text/javascript">
-    alert("Projeto cadastrado com sucesso!");
-    </script>
-    <meta http-equiv="refresh" content="5; url=cadastro.php">'; exit;
+    header("Location: index.php"); exit;
   }
   else{
   $sql = "SELECT * FROM usuario WHERE login = '$usuario' and senha='$senha'";
   $executador=mysqli_query($mysql->con, $sql);
   $linha=mysqli_fetch_assoc($executador);
+  $curso = $linha['nome'];
+
+  $sql_curso = "SELECT * FROM curso WHERE nome_curso = '$curso'";
+  $sqlexec = mysqli_query($mysql->con, $sql_curso);
+  $linha_curso = mysqli_fetch_assoc($sqlexec);
+
+  $periodo = $linha_curso['periodo'];
+
   }
 ?>
 
@@ -112,13 +117,10 @@
                       <input type="text" name="txtcurso" value="<?php echo $linha['nome'] ?>" readonly>
                  <b>Professor Responsavel:</b><br>
                  <select name="txtprofresp">
-                  <?php 
-                    while ($linha_prof=mysqli_fetch_assoc($exec_prof)) {
-                  ?>
-                    <option><?php echo $linha['nome']; ?></option>                  
-                  <?php   
-                    }
-                  ?>
+                    <option>Ivo</option>
+                    <option>Gabriela</option>
+                    <option>Bruno</option>
+                    <option>Edimur</option>                  
                  </select ><br>
                  <div class="text-center">
                   <h3>Escalas:</h3>
@@ -131,8 +133,7 @@
                  <br>
 
                  <?php 
-                    if ($linha['nome'] == "teste") {
-                    
+                    if ($periodo != 'noite') {
                   ?>
                  <div id="diaum" class="jumbotron" style="display: none; padding-top: 32px; padding-bottom: 32px;">
                   <h3 class="display-7 text-center">Escala 1° dia</h3>
@@ -151,8 +152,6 @@
                       <input type="text" name="txtescala2m" class="escala" id="manha2" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required><br> 
                      <b>Tarde:</b>
                      <input type="text" name="txtescala2t" class="escala" id="tarde2" placeholder=" Ex: Patricia Silva, Marcos Ramos e Gustavo Sousa" required><br> 
-                     <b>Noite:</b>
-                      <input type="text" name="txtescala2n" class="escala" id="noite2" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required><br> 
                   </div>
                   <?php
                   }else{

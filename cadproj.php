@@ -7,16 +7,42 @@
 	$nome=$_POST["txtnome"];
 	$curso = $_POST["txtcurso"];
 	$professor=$_POST["txtprofresp"];
-	$diaumanha=$_POST["txtescala1m"];
-	$diaumtarde = $_POST["txtescala1t"];
-	$diaumnoite = $_POST["txtescala1n"];
-	$diadoismanha = $_POST["txtescala2m"];
-	$diadoistarde = $_POST["txtescala2t"];
-	$diadoisnoite = $_POST["txtescala2n"];
+
+
+
+
 
 	$integrante1=$_POST["txtinte1"];
 	$integrante2=$_POST["txtinte2"];
 	$integrante3=$_POST["txtinte3"];
+
+	if (isset($_POST['txtescala1n'])){
+		$diaumnoite = $_POST["txtescala1n"];
+	}else{
+		$diaumnoite = "--";
+	}
+
+	if (isset($_POST['txtescala1m'])){
+		$diaumanha=$_POST["txtescala1m"];
+		$diaumtarde = $_POST["txtescala1t"];
+	}else{
+		$diaumanha="--";
+		$diaumtarde ="--";
+	}
+
+	if (isset($_POST['txtescala2m'])){
+		$diadoismanha = $_POST["txtescala2m"];
+		$diadoistarde = $_POST["txtescala2t"];
+	}else{
+		$diadoismanha ="--";
+		$diadoistarde ="--";
+	}
+
+	if (isset($_POST['txtescala2n'])){
+		$diadoisnoite = $_POST["txtescala2n"];
+	}else{
+		$diadoisnoite ="--";
+	}
 
 	if (isset($_POST['txtinte4'])){
 		$integrante4=$_POST["txtinte4"];

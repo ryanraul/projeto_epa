@@ -131,8 +131,6 @@
               <div id="mec_ano"  style="display: none;">
               <ul>  
                   <a href="projetoslistnd.php" id="" class="btn btn-primary">1º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-primary">2º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-primary">3º ano</a></br>
               </ul>
               </div>
               <button id="voltar" class="btn btn-outline-secondary" style="margin-left: 39px; padding-left: 85px;padding-right: 85px;">Voltar</button>

@@ -90,7 +90,7 @@
                     <input type="password" class="form-control" name="txtSenha" required="">
 
                      <div class="modal-footer">
-                <input type="submit" id="laranbotao" class="btn btn-primary" value="Logar"></button>
+                <input type="submit" id="laranbotao" class="btn btn-secondary" value="Logar"></button>
                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Fechar</button>
               </div>
                   </form>

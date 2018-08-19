@@ -1,21 +1,25 @@
-<?php 
+<?php  
   include_once('config.php');
   $mysql = new BancodeDados();
   $mysql->conecta();
 
-  session_start();
+  if(!isset($_SESSION)) session_start();
   $usuario=$_SESSION['login'];
   $senha=$_SESSION['senha'];
 
-  if (!isset($_SESSION['usuario']) && !isset($_SESSION['senha'])) {
-    header("location: index.php");
+  $nivel=2;
+
+  if (!isset($_SESSION['login'])  or !isset($_SESSION['senha']) or ($_SESSION['nivel_acesso']!=$nivel)) {
+    session_destroy();
+    header("Location: index.php"); exit;
   }
   else{
-    $sql = "SELECT * FROM usuario_prof WHERE login = '$usuario' and senha='$senha'";
-    $exec = mysqli_query($mysql->con, $sql);
-    $linha=mysqli_fetch_assoc($exec);
+  $sql = "SELECT * FROM usuario WHERE login = '$usuario' and senha='$senha'";
+  $executador=mysqli_query($mysql->con, $sql);
+  $linha=mysqli_fetch_assoc($executador);
+  $curso = $linha['nome'];
   }
- ?>
+?>
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -95,7 +99,7 @@
               $mysql = new BancodeDados();
               $mysql->conecta();
 
-              $consulta="SELECT * FROM projeto";
+              $consulta="SELECT * FROM projeto WHERE nome_proj = '$curso'";
               $exec=mysqli_query($mysql->con,$consulta);
             ?>
             <table class="table table-bordered" id="tabelaproj">
