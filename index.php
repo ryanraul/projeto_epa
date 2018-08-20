@@ -29,7 +29,7 @@
 
           </div>
           <div class="d-block d-sm-none">
-            <button id="btn-login" type="button" data-toggle="modal" data-target="#login"><i class="fas fa-user-circle"></i></button>
+            <button id="btn-login" type="button"><i class="fas fa-user-circle"></i></button>
           </div>
       </div>
 
