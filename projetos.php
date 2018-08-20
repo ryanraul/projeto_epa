@@ -17,6 +17,9 @@
   $sql = "SELECT * FROM usuario WHERE login = '$usuario' and senha='$senha'";
   $executador=mysqli_query($mysql->con, $sql);
   $linha=mysqli_fetch_assoc($executador);
+   $sql = "SELECT * FROM projeto";
+  $executado2=mysqli_query($mysql->con, $sql);
+
   }
 ?>
 <!doctype html>
@@ -104,10 +107,15 @@
                 <button class="btn btn-outline-success" id="nutribotao"><img src="img/nutr.png" style="width: 100px;"><br>NUTRIÇÃO E DIETÉTICA</button>
                 <button class="btn btn-outline-primary" id="trabbotao" style="font-size: 13px;"><img src="img/segura.png" style="width: 100px;"><br>SEGURANÇA DO TRABALHO</button>
           </div>
+           <?php
+                while($linha2=mysqli_fetch_assoc($executado2)){
+
+                ?>
             <div id="series">
               <div id="adm_ano" style="display: none;">
               <ul>
-                  <a href="projetoslistnd.php" id="" class="btn btn-warning">1º ano</a></br>
+             
+                  <a href="projetoslistnd.php?curso=<?php echo $linha2['curso'];?>" id="" class="btn btn-warning">1º ano</a></br>
                   <a href="projetoslistnd.php" id="" class="btn btn-warning">2º ano</a></br>
                   <a href="projetoslistnd.php" id="" class="btn btn-warning">3º ano</a></br>
               </ul>
@@ -129,6 +137,10 @@
               </ul>
               </div>
 
+<?php
+
+}
+?>
               <div id="mec_ano"  style="display: none;">
               <ul>  
                   <a href="projetoslistnd.php" id="" class="btn btn-primary">1º ano</a></br>

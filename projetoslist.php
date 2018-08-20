@@ -98,8 +98,8 @@
               include_once('config.php');
               $mysql = new BancodeDados();
               $mysql->conecta();
-
-              $consulta="SELECT * FROM projeto";
+              $id=(int)$_GET['id'];
+              $consulta="SELECT * FROM projeto where id=$id";
               $exec=mysqli_query($mysql->con,$consulta);
               $linha=mysqli_fetch_assoc($exec);
 
@@ -107,7 +107,7 @@
             <table class="table table-bordered">
                 <tr>
                   <th>Nome do Projeto:</th>
-                  <td>PECUARIA SÃO PEDRO DA SILVA</td>
+                  <td><?php echo $linha['nome_proj'];?></td>
                 </tr>
                 <tr>
                   <th>Integrantes:</th>
@@ -127,15 +127,15 @@
                 </tr>                
                 <tr>
                   <th>Descrição do Projeto:</th>
-                  <td>e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</td>
+                  <td><?php echo $linha['descricao_proj'];?></td>
                 </tr>
                 <tr>
                   <th>Materiais:</th>
-                  <td>e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</td>
+                  <td><?php echo $linha['materiais'];?></td>
                 </tr>
                 <tr>
                   <th>Observação:</th>
-                  <td>e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto  Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</td>
+                  <td><?php echo $linha['obs'];?> </td>
                 </tr>
 
               </tbody>

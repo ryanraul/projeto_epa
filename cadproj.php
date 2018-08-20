@@ -28,7 +28,7 @@ return $campo;
 	$professor= $_POST["txtprofresp"];
 	$professor=antisql($professor);
 	if(isset($_POST['txtescala1m'])){
-	$diaumanha= "<b>1° dia de manhã:</b> ".$_POST["txtescala1m"];
+	$diaumanha= "<b>1° dia de manhã:</b> ".$_POST["txtescala1m"]."<br>";
 	$diaumanha=antisql($diaumanha);
 }
 
@@ -39,7 +39,7 @@ return $campo;
 		}
 
 	if(isset($_POST['txtescala1t'])){
-	$diaumtarde = "<br>\n"."<b>1° dia de tarde:</b> ".$_POST["txtescala1t"];
+	$diaumtarde = "<br>\n"."<b>1° dia de tarde:</b> ".$_POST["txtescala1t"]."<br>";
 	$diaumtarde = antisql($diaumtarde);
 }
 
@@ -51,7 +51,7 @@ return $campo;
 	}
 
 	if(isset($_POST['txtescala2m'])){
-	$diadoismanha = "<br>\n"."<b>2° dia de manha:</b> ".$_POST["txtescala2m"];
+	$diadoismanha = "<br>\n"."<b>2° dia de manha:</b> ".$_POST["txtescala2m"]."<br>";
 	$diadoismanha=antisql($diadoismanha);
 }
 
@@ -62,7 +62,7 @@ else{
 }
 	
 	if(isset($_POST['txtescala2t'])){
-	$diadoistarde = "<br>\n"."<b>2° dia de tarde:</b> ".$_POST["txtescala2t"];
+	$diadoistarde = "<br>\n"."<b>2° dia de tarde:</b> ".$_POST["txtescala2t"]."<br>";
 	$diadoistarde=antisql($diadoistarde);
 }
 
@@ -73,7 +73,7 @@ else{
 }
 
 	if (isset($_POST['txtescala1n'])){
-		$diaumnoite= "<br>\n"."<b>1° dia de noite:</b> ".$_POST["txtescala1n"];
+		$diaumnoite= "<br>\n"."<b>1° dia de noite:</b> ".$_POST["txtescala1n"]."<br>";
 		$diaumnoite=antisql($diaumnoite);
 	} 
 	else{
@@ -83,7 +83,7 @@ else{
 
 
 	if (isset($_POST['txtescala2n'])){
-		$diadoisnoite= "<br>\n"."<b>2° dia de noite:</b> ".$_POST["txtescala2n"];
+		$diadoisnoite= "<br>\n"."<b>2° dia de noite:</b><BR> ".$_POST["txtescala2n"]."<br>";
 		$diadoisnoite=antisql($diadoisnoite);
 	} 
 	else{
@@ -153,7 +153,7 @@ else{
 	$integ= $integrante1."<br>\n".$integrante2."<br>\n".$integrante3."<br>\n".$integrante4."<br>\n".$integrante5."<br>\n".$integrante6."<br>\n".$integrante7;
 
 
-	$escala= $diaumanha.$diaumtarde.$diaumnoite.$diadoismanha.$diadoistarde.$diadoisnoite;
+	$escala= $diaumanha."<br>".$diaumtarde."<br>".$diaumnoite."<br>".$diadoismanha."<br>".$diadoistarde."<br>".$diadoisnoite;
 
 	$sqlInsert = "INSERT INTO projeto VALUES(0,'$nome','$integ','$curso','$professor','$escala','$desc','$materiais','$obs')";
 	$resultado = $mysql->sqlcadproj($sqlInsert);

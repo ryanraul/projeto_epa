@@ -17,7 +17,11 @@
   $sql = "SELECT * FROM usuario WHERE login = '$usuario' and senha='$senha'";
   $executador=mysqli_query($mysql->con, $sql);
   $linha=mysqli_fetch_assoc($executador);
-  $curso = $linha['nome'];
+  $curso=$_GET['curso'];
+  $sqlcur = "SELECT * FROM curso where nome_curso='$curso'";
+  $execur = mysqli_query($mysql->con, $sqlcur);
+  $dados = mysqli_fetch_assoc($execur);
+
   }
 ?>
 <!doctype html>
@@ -32,11 +36,25 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/style_mobile.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <script src="node_modules/jquery/dist/jquery.js"></script>
      <script src="node_modules/jquery/efeitos/efeitos.js"></script>
     <script src="node_modules/popper.js/dist/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <title>EPA</title>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $('.mexer').mouseover(function(){
+          $(this).addClass("animated infinite shake");
+        });
+        $('.mexer').mouseout(function(){
+          $(this).removeClass("animated infinite shake");
+        });
+
+      });
+    </script>
 
   </head>
   <body>
@@ -92,14 +110,14 @@
             font-family: sans-serif;
             padding-bottom: 4px;
             padding-left: 7px;">
-            3°ETIM de Administração</h2>
+          <?php echo $dados['nome_curso'];?></h2>
             <?php
 
               include_once('config.php');
               $mysql = new BancodeDados();
               $mysql->conecta();
 
-              $consulta="SELECT * FROM projeto WHERE nome_proj = '$curso'";
+              $consulta="SELECT * FROM projeto WHERE curso = '$curso'";
               $exec=mysqli_query($mysql->con,$consulta);
             ?>
             <table class="table table-bordered" id="tabelaproj">
@@ -114,7 +132,7 @@
                 <tr>
                   <td><?php echo $linha['id'];?></td>
                   <td><?php echo $linha['nome_proj'];?></td>
-                  <td><center><a id="laranbotao" href="projetoslist.php" class="btn btn-outline-secondary">Detalhes do projeto  <i id="seta" class="fas fa-angle-double-right"></i></a></center></td>
+                  <td><center><a id="laranbotao" href="projetoslist.php?id=<?php echo $linha['id'];?>" class="btn btn-outline-secondary mexer">Detalhes do projeto  <i id="seta" class="fas fa-angle-double-right"></i></a></center></td>
                 </tr>
                 <?php 
                      }
