@@ -28,7 +28,11 @@ return $campo;
 	$professor= $_POST["txtprofresp"];
 	$professor=antisql($professor);
 	if(isset($_POST['txtescala1m'])){
+<<<<<<< HEAD
 	$diaumanha= "<b>1° dia de manhã:</b> ".$_POST["txtescala1m"];
+=======
+	$diaumanha= $_POST["txtescala1m"];
+>>>>>>> 1f2326f64599cf1162dfefa3ea577edc15cf29ca
 	$diaumanha=antisql($diaumanha);
 }
 
@@ -39,7 +43,11 @@ return $campo;
 		}
 
 	if(isset($_POST['txtescala1t'])){
+<<<<<<< HEAD
 	$diaumtarde = "<br>\n"."<b>1° dia de tarde:</b> ".$_POST["txtescala1t"];
+=======
+	$diaumtarde = $_POST["txtescala1t"];
+>>>>>>> 1f2326f64599cf1162dfefa3ea577edc15cf29ca
 	$diaumtarde = antisql($diaumtarde);
 }
 
@@ -51,7 +59,11 @@ return $campo;
 	}
 
 	if(isset($_POST['txtescala2m'])){
+<<<<<<< HEAD
 	$diadoismanha = "<br>\n"."<b>2° dia de manha:</b> ".$_POST["txtescala2m"];
+=======
+	$diadoismanha = $_POST["txtescala2m"];
+>>>>>>> 1f2326f64599cf1162dfefa3ea577edc15cf29ca
 	$diadoismanha=antisql($diadoismanha);
 }
 
@@ -62,7 +74,11 @@ else{
 }
 	
 	if(isset($_POST['txtescala2t'])){
+<<<<<<< HEAD
 	$diadoistarde = "<br>\n"."<b>2° dia de tarde:</b> ".$_POST["txtescala2t"];
+=======
+	$diadoistarde = $_POST["txtescala2t"];
+>>>>>>> 1f2326f64599cf1162dfefa3ea577edc15cf29ca
 	$diadoistarde=antisql($diadoistarde);
 }
 
@@ -73,7 +89,11 @@ else{
 }
 
 	if (isset($_POST['txtescala1n'])){
+<<<<<<< HEAD
 		$diaumnoite= "<br>\n"."<b>1° dia de noite:</b> ".$_POST["txtescala1n"];
+=======
+		$diaumnoite= $_POST["txtescala1n"];
+>>>>>>> 1f2326f64599cf1162dfefa3ea577edc15cf29ca
 		$diaumnoite=antisql($diaumnoite);
 	} 
 	else{
@@ -83,7 +103,11 @@ else{
 
 
 	if (isset($_POST['txtescala2n'])){
+<<<<<<< HEAD
 		$diadoisnoite= "<br>\n"."<b>2° dia de noite:</b> ".$_POST["txtescala2n"];
+=======
+		$diadoisnoite= $_POST["txtescala2n"];
+>>>>>>> 1f2326f64599cf1162dfefa3ea577edc15cf29ca
 		$diadoisnoite=antisql($diadoisnoite);
 	} 
 	else{

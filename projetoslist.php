@@ -51,7 +51,7 @@
           <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linha['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
           </div>
           <div class="d-block d-sm-none">
-            <a href="sair.php" id="btn-login"><i class="fas fa-sign-in-alt"></i></a>
+            <a href="sair.php" id="btn-login"><?php echo $linha['nome']; ?>  <i class="fas fa-sign-in-alt"></i></a>
           </div>
       </div>
 
