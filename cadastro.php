@@ -142,8 +142,6 @@
                      <input type="text" name="txtescala1m" class="escala" id="manha1" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required><br>  
                      <b>Tarde:</b>
                       <input type="text" name="txtescala1t" class="escala" id="tarde1" placeholder=" Ex: Patricia Silva, Marcos Ramos e Gustavo Sousa" required><br> 
-                     <b>Noite:</b>
-                      <input type="text" name="txtescala1n" class="escala" id="noite1" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required><br> 
                   </div>
 
                   <div id="diadois" class="jumbotron" style="display: none; padding-top: 32px; padding-bottom: 32px;">
