@@ -138,8 +138,8 @@
               </tbody>
             </table>
             <center>
-              <a href="projetos.php" class="btn btn-outline-secondary" style="margin-bottom: 20px;"><b>Voltar</b></a>
-              <a href="projetos.php" class="btn btn-outline-secondary" style="margin-bottom: 20px;"><b>Avaliar</b></a>
+              <a href="projetos.php" class="btn btn-outline-secondary Voltar" style="margin-bottom: 20px;"><b>Voltar</b></a>
+              <a href="projetos.php" class="btn btn-outline-secondary voltar" style="margin-bottom: 20px;"><b>Avaliar</b></a>
             </center>
           </div>
       </section>

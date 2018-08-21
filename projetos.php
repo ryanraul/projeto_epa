@@ -100,7 +100,7 @@
                 <button class="btn btn-outline-primary" id="autombotao" style="font-size: 12px;"><img src="img/auto.png" style="width: 100px;"><br>MANUTENÇÃO AUTOMOTIVA</button>
                 <button class="btn btn-outline-warning" id="logisbotao"><img src="img/logist.png" style="width: 100px;"><br>LOGÍSTICA</button>
                 <button class="btn btn-outline-danger" id="infowebbotao" style="font-size: 12px;"><img src="img/web.png" style="width: 100px; "><br>INFORMATICA PARA INTERNET</button>
-                <button class="btn btn-outline-success" id="nutribotao"><img src="img/nutr.png" style="width: 100px;"><br>NUTRIÇÃO E DIETÉTICA</button>
+                <button class="btn btn-outline-secondary" id="nutribotao"><img src="img/nutr.png" style="width: 100px;"><br>NUTRIÇÃO E DIETÉTICA</button>
                 <button class="btn btn-outline-primary" id="trabbotao" style="font-size: 13px;"><img src="img/segura.png" style="width: 100px;"><br>SEGURANÇA DO TRABALHO</button>
           </div>
            <?php
@@ -108,36 +108,161 @@
 
                 ?>
             <div id="series">
-              <div id="adm_ano" style="display: none;">
+
+              <div id="adm_ano" style="display: none; margin-left: 13px;">
               <ul>
-                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE ADMINISTRACAO" id="" class="btn btn-warning">1º ano</a></br>
-                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE ADMINISTRACAO" id="" class="btn btn-warning">2º ano</a></br>
-                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE ADMINISTRACAO" id="" class="btn btn-warning">3º ano</a></br>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE ADMINISTRACAO" class="btn btn-warning">1º ano</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE ADMINISTRACAO" class="btn btn-warning">2º ano</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE ADMINISTRACAO" class="btn btn-warning">3º ano</a></br>
               </ul>
               </div>
 
-              <div id="info_ano"  style="display: none;">
+              <div id="info_ano"  style="display: none; margin-left: 13px;">
               <ul>
-                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE INFORMATICA" id="" class="btn btn-danger">1º ano</a></br>
-                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE INFORMATICA" id="" class="btn btn-danger">2º ano</a></br>
-                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE INFORMATICA" id="" class="btn btn-danger">3º ano</a></br>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE INFORMATICA" class="btn btn-danger">1º ano</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE INFORMATICA" class="btn btn-danger">2º ano</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE INFORMATICA" class="btn btn-danger">3º ano</a></br>
               </ul>
               </div>
 
-              <div id="quim_ano"  style="display: none;">
+              <div id="quim_ano"  style="display: none; margin-left: 13px;">
               <ul>
-                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE QUIMICA" id="" class="btn btn-success">1º ano</a></br>
-                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE QUIMICA" id="" class="btn btn-success">2º ano</a></br>
-                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE QUIMICA" id="" class="btn btn-success">3º ano</a></br>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE QUIMICA" class="btn btn-success">1º ano</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE QUIMICA" class="btn btn-success">2º ano</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE QUIMICA" class="btn btn-success">3º ano</a></br>
               </ul>
               </div>
 
-              <div id="mec_ano"  style="display: none;">
+              <div id="medio_ano"  style="display: none; margin-left: 13px;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=SEGUNDO ANO DO ENSINO MEDIO REGULAR" id="laranbotao" class="btn btn-secondary">2º ano</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO ANO DO ENSINO MEDIO REGULAR" id="laranbotao" class="btn btn-secondary">3º ano</a></br>
+              </ul>
+              </div>
+
+              <div id="farma_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE FARMACIA" id="farmabotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE FARMACIA" id="farmabotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE FARMACIA" id="farmabotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="logist_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE LOGISTICA" id="logisbotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE LOGISTICA" id="logisbotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE LOGISTICA" id="logisbotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+               <div id="info_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE INFORMATICA" id="infobotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE INFORMATICA" id="infobotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE INFORMATICA" id="infobotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="adm_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE ADMINISTRACAO" id="admbotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE ADMINISTRACAO" id="admbotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE ADMINISTRACAO" id="admbotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="meioa_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE MEIO AMBIENTE" id="meiobotao" class="btn btn-success">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE MEIO AMBIENTE" id="meiobotao" class="btn btn-success">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE MEIO AMBIENTE" id="meiobotao" class="btn btn-success">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="nutr_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE NUTRICAO E DIETETICA" id="nutribotao" class="btn btn-success">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE NUTRICAO E DIETETICA" id="nutribotao" class="btn btn-success">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE NUTRICAO E DIETETICA" id="nutribotao" class="btn btn-success">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="infoweb_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE INFORMATICA PARA INTERNET" id="infowebbotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE INFORMATICA PARA INTERNET" id="infowebbotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE INFORMATICA PARA INTERNET" id="infowebbotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="elet_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE ELETROTECNICA" id="eletrobotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE ELETROTECNICA" id="eletrobotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE ELETROTECNICA" id="eletrobotao" class="btn btn-secondary">3º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=QUARTO MODULO DE ELETROTECNICA" id="eletrobotao" class="btn btn-secondary">4º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="mec_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE MECANICA" id="" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE MECANICA" id="" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE MECANICA" id="" class="btn btn-secondary">3º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=QUARTO MODULO DE MECANICA" id="" class="btn btn-secondary">4º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="edif_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE EDFICACOES" id="edificabotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE EDFICACOES" id="edificabotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE EDFICACOES" id="edificabotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="autom_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE MANUTENCAO" id="autombotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE MANUTENCAO" id="autombotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE MANUTENCAO" id="autombotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="mecat_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE MECATRONICA" id="mecatrobotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE MECATRONICA" id="mecatrobotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE MECATRONICA" id="mecatrobotao" class="btn btn-secondary">3º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=QUARTO MODULO DE MECATRONICA" id="mecatrobotao" class="btn btn-secondary">4º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="quim_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE QUIMICA" id="quimbotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE QUIMICA" id="quimbotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE QUIMICA" id="quimbotao" class="btn btn-secondary">3º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=QUARTO MODULO DE QUIMICA" id="quimbotao" class="btn btn-secondary">4º modulo</a></br>
+              </ul>
+              </div>
+
+              <div id="seg_mod"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO MODULO DE SEGURANCA DO TRABALHO" id="trabbotao" class="btn btn-secondary">1º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO MODULO DE SEGURANCA DO TRABALHO" id="trabbotao" class="btn btn-secondary">2º modulo</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO MODULO DE SEGURANCA DO TRABALHO" id="trabbotao" class="btn btn-secondary">3º modulo</a></br>
+              </ul>
+              </div>
+
+
+              <div id="mec_ano"  style="display: none; margin-left: 13px;">
               <ul>
                   <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE MECANICA" id="" class="btn btn-primary">1º ano</a></br>
               </ul>
               </div>
-              <button id="voltar" class="btn btn-outline-secondary" style="margin-left: 39px; padding-left: 85px;padding-right: 85px;"><b>Voltar</b></button>
+              <button id="voltar" class="btn btn-outline-secondary voltar"><b>Voltar</b></button>
 
 <?php
 
