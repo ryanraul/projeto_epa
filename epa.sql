@@ -1,27 +1,25 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
--- https://www.phpmyadmin.net/
+-- version 3.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1:3306
--- Generation Time: 20-Ago-2018 às 12:41
--- Versão do servidor: 5.7.21
--- PHP Version: 5.6.35
+-- Servidor: localhost
+-- Tempo de Geração: 
+-- Versão do Servidor: 5.5.24-log
+-- Versão do PHP: 5.3.13
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `epa`
+-- Banco de Dados: `epa`
 --
-CREATE DATABASE IF NOT EXISTS `epa` DEFAULT CHARACTER SET utf8 COLLATE utf8_swedish_ci;
+CREATE DATABASE `epa` DEFAULT CHARACTER SET utf8 COLLATE utf8_swedish_ci;
 USE `epa`;
 
 -- --------------------------------------------------------
@@ -30,7 +28,6 @@ USE `epa`;
 -- Estrutura da tabela `admin`
 --
 
-DROP TABLE IF EXISTS `admin`;
 CREATE TABLE IF NOT EXISTS `admin` (
   `login` varchar(100) COLLATE utf8_swedish_ci NOT NULL,
   `senha` varchar(200) COLLATE utf8_swedish_ci NOT NULL
@@ -49,14 +46,13 @@ INSERT INTO `admin` (`login`, `senha`) VALUES
 -- Estrutura da tabela `curso`
 --
 
-DROP TABLE IF EXISTS `curso`;
 CREATE TABLE IF NOT EXISTS `curso` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome_curso` varchar(255) COLLATE utf8_swedish_ci NOT NULL,
   `periodo` varchar(30) COLLATE utf8_swedish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `nome_curso` (`nome_curso`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=41 ;
 
 --
 -- Extraindo dados da tabela `curso`
@@ -108,7 +104,6 @@ INSERT INTO `curso` (`id`, `nome_curso`, `periodo`) VALUES
 -- Estrutura da tabela `projeto`
 --
 
-DROP TABLE IF EXISTS `projeto`;
 CREATE TABLE IF NOT EXISTS `projeto` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome_proj` varchar(70) COLLATE utf8_swedish_ci NOT NULL,
@@ -118,23 +113,20 @@ CREATE TABLE IF NOT EXISTS `projeto` (
   `escala` varchar(855) COLLATE utf8_swedish_ci NOT NULL,
   `descricao_proj` varchar(755) COLLATE utf8_swedish_ci NOT NULL,
   `materiais` varchar(755) COLLATE utf8_swedish_ci NOT NULL,
-  `observações` varchar(755) COLLATE utf8_swedish_ci NOT NULL,
+  `obs` varchar(755) COLLATE utf8_swedish_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `curso` (`curso`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_swedish_ci AUTO_INCREMENT=21 ;
 
 --
 -- Extraindo dados da tabela `projeto`
 --
 
-INSERT INTO `projeto` (`id`, `nome_proj`, `integrantes`, `curso`, `professor_resp`, `escala`, `descricao_proj`, `materiais`, `observações`) VALUES
-(2, 'TESTE', 'AAA<br>\nBBB<br>\nXXXX<br>\nAAA<br>\n--<br>\n--<br>\n--', 'PRIMEIRO ETIM DE INFORMATICA', 'RRRRR', '<b>1Â° dia de manhÃ£:</b> RR<br>\n<b>1Â° dia de tarde:</b> RR<br>\n<b>1Â° dia de noite:</b> RR<br>\n<b>2Â° dia de manha:</b> RRR<br>\n<b>2Â° dia de tarde:</b> RRRRRR<br>\n<b>2Â° dia de noite:</b> RRRR', 'VVVVVVV', 'YYYYY', 'UUUUU'),
-(5, 'aaa', 'aaa<br>\naa<br>\naaaa<br>\n--<br>\n--<br>\n--<br>\n--', 'PRIMEIRO ETIM DE INFORMATICA', 'aaaa', '<b>1Â° dia de manhÃ£:</b> aaaa<br>\n<b>1Â° dia de tarde:</b> aaa<br>\n<b>1Â° dia de noite:</b> aaaa<br>\n<b>2Â° dia de manha:</b> aaa<br>\n<b>2Â° dia de tarde:</b> aaaaaaa<br>\n<b>2Â° dia de noite:</b> zzzzzzzz', 'ate', 'eta', 'uta'),
-(7, 'PROJETO TESTE', 'OSVALDO<br>\nLUCAS<br>\nANDERSON<br>\n--<br>\n--<br>\n--<br>\n--', 'SEGUNDO MODULO DE ADMINISTRACAO ', 'Edimur', '<b>1Â° dia de manhÃ£:</b> <br>\n<b>1Â° dia de tarde:</b> <br>\n<b>1Â° dia de noite:</b> LUCAS <br>\n<b>2Â° dia de manha:</b> <br>\n<b>2Â° dia de tarde:</b> <br>\n<b>2Â° dia de noite:</b> OSVALDO', 'RERERERERER', 'RERERERERE', 'RERERERERERRE'),
-(8, 'PROJETO TESTE 2', 'LUCAS<br>\nOSVALDO PRESTES<br>\nGABRIEL SILVA<br>\n--<br>\n--<br>\n--<br>\n--', 'SEGUNDO MODULO DE ADMINISTRACAO ', 'Gabriela', '<b>1Â° dia de manhÃ£:</b> <br>\n<b>1Â° dia de tarde:</b> <br>\n<b>1Â° dia de noite:</b> OSVALD<br>\n<b>2Â° dia de manha:</b> <br>\n<b>2Â° dia de tarde:</b> <br>\n<b>2Â° dia de noite:</b> GABRIEL', 'WEWEWEWEW', 'EWEWEEWWEW', 'EWEWEWEWE'),
-(9, 'arnaldo', 'lucas<br>\ngabriel<br>\ngustav<br>\n--<br>\n--<br>\n--<br>\n--', 'SEGUNDO MODULO DE ADMINISTRACAO ', 'Gabriela', '<b>1Â° dia de manhÃ£:</b> --<br>\n<b>1Â° dia de tarde:</b> --<br>\n<b>1Â° dia de noite:</b> renan<br>\n<b>2Â° dia de manha:</b> --<br>\n<b>2Â° dia de tarde:</b> --<br>\n<b>2Â° dia de noite:</b> diogo', 'dasdasd', 'asdasd', 'asdasd'),
-(10, 'TESDTE', 'AAAA<br>\nAAAAAAAAAAAAA<br>\nAAAAAAAAAAA<br>\n--<br>\n--<br>\n--<br>\n--', 'PRIMEIRO ETIM DE INFORMATICA', 'Gabriela', '<b>1Â° dia de manhÃ£:</b> AA<br>\n<b>1Â° dia de tarde:</b> AA<br>\n<b>1Â° dia de noite:</b> <br>\n<b>2Â° dia de manha:</b> AA<br>\n<b>2Â° dia de tarde:</b> AA<br>\n<b>2Â° dia de noite:</b> ', 'AAAAAAAAAA', 'AAAAAAAAAA', 'AAAAAAAAAA'),
-(11, 'sZ', 'AAszQ<br>\nDSDD<br>\nDDDDD<br>\n--<br>\n--<br>\n--<br>\n--', 'TERCEIRO MODULO DE INFORMATICA', 'Edimur', '<b>1Â° dia de manhÃ£:</b> <br>\n<b>1Â° dia de tarde:</b> <br>\n<b>1Â° dia de noite:</b> SSSS<br>\n<b>2Â° dia de manha:</b> <br>\n<b>2Â° dia de tarde:</b> <br>\n<b>2Â° dia de noite:</b> SSS', 'SSS', 'SSSSS', 'AADWQAFEWSGWVERDBV');
+INSERT INTO `projeto` (`id`, `nome_proj`, `integrantes`, `curso`, `professor_resp`, `escala`, `descricao_proj`, `materiais`, `obs`) VALUES
+(17, 'Projeto 1 adm TESTE', 'Lucas<br>\nOsvaldo<br>\nAnderson<br>\n--<br>\nRenan<br>\n--<br>\n--', 'PRIMEIRO ETIM DE ADMINISTRACAO', 'Ivo', '1Â° dia de manhÃ£: Lucas e Osvaldo<br>\n1Â° dia de tarde: Renan e Anderson<br><br>\n2Â° dia de manha: Osvaldo<br>\n2Â° dia de tarde: Lucas e Renan<br>', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante. Aliquam erat volutpat. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Duis condimentum augue id magna semper rutrum. Nullam justo enim, consectetuer nec, ullamcorper ac, vestibulum in, elit. Proin pede metus, vulputate nec, fermentum fringilla, vehicula', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabi', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et'),
+(18, 'Projeto teste 2', 'Gustavo<br>\nGuilherme<br>\nZacheo<br>\n--<br>\nPedro<br>\nPatricia<br>\n--', 'PRIMEIRO ETIM DE ADMINISTRACAO', 'Ivo', '1Â° dia de manhÃ£: Zacheo<br>\n1Â° dia de tarde: Patricia, Gustavo e Guilherme<br><br>\n2Â° dia de manha: Guilherme e Gustavo<br>\n2Â° dia de tarde: Zacheo<br>', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante. Aliquam erat volutpat.', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'),
+(19, 'Google 2.0', 'Matheus<br>\nHarryson<br>\nRafael Ribeiro<br>\nJoÃ£o Vitor<br>\nRobson<br>\nSamuel Teles<br>\nCleiton da Silva', 'SEGUNDO ETIM DE INFORMATICA', 'Edimur', '1Â° dia de manhÃ£: Cleiton, Samuel e Rafael Ribeiro<br>\n1Â° dia de tarde: Samuel e Harryson<br><br>\n2Â° dia de manha: JoÃ£o, Robson e Matheus<br>\n2Â° dia de tarde: Harryson, Samuel e Cleiton<br>', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante. Aliquam erat volutpat. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Duis condimentum augue id magna semper rutrum. Nullam justo enim,', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce'),
+(20, 'Quiimica', 'Luiz<br>\nCarol<br>\nFelipe<br>\nAna<br>\n--<br>\n--<br>\n--', 'TERCEIRO ETIM DE QUIMICA', 'Gabriela', '1Â° dia de manhÃ£: Ana e Luiz<br>\n1Â° dia de tarde: Felipe e Carol<br><br>\n2Â° dia de manha: Felipe e Ana<br>\n2Â° dia de tarde: Luiz e Felipe<br>', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et urna. Fusce nibh. Duis risus. Curabitur sagittis hendrerit ante. Aliquam erat volutpat. Vestibulum erat nulla, ullamcorper nec, rutrum non, nonummy ac, erat. Duis condimentum augue id magna semper rutrum. Nullam justo enim,', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam feugiat, turpis at pulvinar vulputate, erat libero tristique tellus, nec bibendum odio risus sit amet ante. Aliquam erat volutpat. Nunc auctor. Mauris pretium quam et', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Null');
 
 -- --------------------------------------------------------
 
@@ -142,7 +134,6 @@ INSERT INTO `projeto` (`id`, `nome_proj`, `integrantes`, `curso`, `professor_res
 -- Estrutura da tabela `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
@@ -150,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `senha` varchar(200) NOT NULL,
   `nivel_acesso` int(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
 -- Extraindo dados da tabela `usuario`
@@ -194,18 +185,17 @@ INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `nivel_acesso`) VALUES
 (44, 'QUARTO MODULO DE MECATRONICA ', '4mod_mecat', '4dd65cd6bda3d3f28c3a76698acc718a7d681cd6', 1),
 (45, 'SEGUNDO MODULO DE MECATRONICA ', '2mod_mecat', 'e590129a911995cb991d96926114a9e7fc0f039d', 1),
 (46, 'TERCEIRO MODULO DE NUTRICAO E DIETETICA ', '3mod_nut', '0850281829d8cec13d031fe2550fbaf89d3653fe', 1),
-(47, 'Gabriel Prestes', 'biel', 'a2185857c5ab52de3cf842ff0e63508f01ddb39e', 2);
+(49, 'Felipe Roberto', 'lipe', '6bb65257fcab4e2975cd96b0f7fc4b53d97c10b6', 2);
 
 --
--- Constraints for dumped tables
+-- Restrições para as tabelas dumpadas
 --
 
 --
--- Limitadores para a tabela `projeto`
+-- Restrições para a tabela `projeto`
 --
 ALTER TABLE `projeto`
   ADD CONSTRAINT `projeto_ibfk_1` FOREIGN KEY (`curso`) REFERENCES `curso` (`nome_curso`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
