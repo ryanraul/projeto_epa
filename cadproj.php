@@ -167,7 +167,7 @@ else{
 echo ' <script type = "text/javascript">
         alert("Erro! Preencha os dados corretamente. Dica: Evite usar valores numéricos.");
       </script>
-        <meta http-equiv="refresh" content="110; url=index.html">';
+        <meta http-equiv="refresh" content="0; url=index.php">';
 
 }
 ?>

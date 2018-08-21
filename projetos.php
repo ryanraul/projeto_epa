@@ -85,23 +85,23 @@
                 <button class="btn btn-outline-danger" id="btninfo"><img src="img/info.png" style="width: 100px;"><br>ETIM INFORMATICA</button>
                 <button class="btn btn-outline-success" id="btnquim"><img src="img/quim.png" style="width: 100px;"><br>ETIM QUIMICA</button>
                 <button class="btn btn-outline-primary" id="btnmec"><img src="img/mec.png" style="width: 100px;"><br>ETIM MECANICA</button>
-                <button class="btn btn-outline-danger" id="infobotao"><img src="img/pc.png" style="width: 100px;"><br>INFORMATICA</button>
+                <button class="btn btn-outline-secondary" id="infobotao"><img src="img/pc.png" style="width: 100px;"><br>INFORMATICA</button>
                 <button class="btn btn-outline-success" id="quimbotao"><img src="img/quim2.png" style="width: 100px;"><br>QUIMICA</button>
-                <button class="btn btn-outline-primary" id="mecbotao"><img src="img/mec.png" style="width: 100px;"><br>MECANICA</button>
-                <button class="btn btn-outline-warning" id="admbotao"><img src="img/adm3.png" style="width: 100px;"><br>ADMINISTRAÇÃO</button>
-                <button class="btn btn-outline-danger" id="laranbotao"><img src="img/pen.png" style="width: 100px;"><br>ENSINO MÉDIO</button>
+                <button class="btn btn-outline-secondary" id="mecbotao"><img src="img/mec.png" style="width: 100px;"><br>MECANICA</button>
+                <button class="btn btn-outline-primary" id="admbotao"><img src="img/adm3.png" style="width: 100px;"><br>ADMINISTRAÇÃO</button>
+                <button class="btn btn-outline-secondary" id="laranbotao"><img src="img/pen.png" style="width: 100px;"><br>ENSINO MÉDIO</button>
                 <button class="btn btn-outline-success" id="meiobotao"><img src="img/ambiente.png" style="width: 100px;"><br>MEIO AMBIENTE</button>
                 <button class="btn btn-outline-primary" id="mecatrobotao"><img src="img/mecat.png" style="width: 100px;"><br>MECATRONICA</button>
-                <button class="btn btn-outline-warning" id="edificabotao"><img src="img/edifica.png" 
+                <button class="btn btn-outline-primary" id="edificabotao"><img src="img/edifica.png" 
                   onmouseover="this.src='img/edifica2.png'"
                   onmouseout="this.src='img/edifica.png'" style="width: 100px;" /><br>EDIFICAÇÕES</button>
                 <button class="btn btn-outline-danger" id="eletrobotao"><img src="img/eletro.png" style="width: 100px;"><br>ELETROTÉCNICA</button>
-                <button class="btn btn-outline-success" id="farmabotao"><img src="img/farm2.png" style="width: 100px;"><br>FARMÁCIA</button>
-                <button class="btn btn-outline-primary" id="autombotao" style="font-size: 12px;"><img src="img/auto.png" style="width: 100px;"><br>MANUTENÇÃO AUTOMOTIVA</button>
+                <button class="btn btn-outline-danger" id="farmabotao"><img src="img/farm2.png" style="width: 100px;"><br>FARMÁCIA</button>
+                <button class="btn btn-outline-seondary" id="autombotao" style="font-size: 12px;"><img src="img/auto.png" style="width: 100px;"><br>MANUTENÇÃO AUTOMOTIVA</button>
                 <button class="btn btn-outline-warning" id="logisbotao"><img src="img/logist.png" style="width: 100px;"><br>LOGÍSTICA</button>
                 <button class="btn btn-outline-danger" id="infowebbotao" style="font-size: 12px;"><img src="img/web.png" style="width: 100px; "><br>INFORMATICA PARA INTERNET</button>
                 <button class="btn btn-outline-secondary" id="nutribotao"><img src="img/nutr.png" style="width: 100px;"><br>NUTRIÇÃO E DIETÉTICA</button>
-                <button class="btn btn-outline-primary" id="trabbotao" style="font-size: 13px;"><img src="img/segura.png" style="width: 100px;"><br>SEGURANÇA DO TRABALHO</button>
+                <button class="btn btn-outline-secondary" id="trabbotao" style="font-size: 13px;"><img src="img/segura.png" style="width: 100px;"><br>SEGURANÇA DO TRABALHO</button>
           </div>
            <?php
                 while($linha2=mysqli_fetch_assoc($executado2)){
