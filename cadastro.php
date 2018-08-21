@@ -66,10 +66,8 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
-            <li><a href="index.html">Alunos</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="index.html">Sobre</a></li>
-            <li><a href="index.html">Alunos</a></li>
+            <li><a href="cadastro.php">Cadastrar projeto</a></li>
+
           </ul>
 
       </div>
@@ -79,10 +77,7 @@
 					<nav id="menu">
   						<ul>
   							<li>
-  								<a href="index.html">Alunos</a>
-  								<a href="projetos.html">Projetos</a>
-  								<a href="index.html">Sobre</a>
-  								<a href="index.html">Alunos</a>
+                  <li><a href="cadastro.php">Cadastrar projeto</a></li>
   							</li>
   						</ul>
   					</nav>

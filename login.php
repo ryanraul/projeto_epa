@@ -32,6 +32,6 @@
 
 	} else {
 		echo '<script type="text/javascript"> alert("Nome de Usuario ou senha invalidos!");</script>';
-		echo '<meta http-equiv="refresh" content="0;url=index.html">';
+		echo '<meta http-equiv="refresh" content="0;url=index.php">';
 	}
 ?>

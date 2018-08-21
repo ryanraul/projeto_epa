@@ -29,7 +29,7 @@
 
           </div>
           <div class="d-block d-sm-none">
-            <button id="btn-login" type="button"><i class="fas fa-user-circle"></i></button>
+            <button id="btn-login" type="button" data-toggle="modal" data-target="#login"><i class="fas fa-user-circle"></i></button>
           </div>
       </div>
 
@@ -49,10 +49,7 @@
 					<nav id="menu">
   						<ul>
   							<li>
-  								<a href="index.php">Alunos</a>
-  								<a href="projetos.php">Projetos</a>
-  								<a href="index.php">Sobre</a>
-  								<a href="index.php">Alunos</a>
+                  
   							</li>
   						</ul>
   					</nav>

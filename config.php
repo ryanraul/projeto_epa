@@ -52,7 +52,7 @@
 			echo ' <script type = "text/javascript">
         alert("Projeto cadastrado com sucesso!");
       </script>
-        <meta http-equiv="refresh" content="5; url=cadastro.php">';
+        <meta http-equiv="refresh" content="0; url=cadastro.php">';
 
 			}
 			

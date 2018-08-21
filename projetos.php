@@ -60,10 +60,8 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
-            <li><a href="index.php">Alunos</a></li>
             <li><a href="projetos.php">Projetos</a></li>
-            <li><a href="index.php">Sobre</a></li>
-            <li><a href="index.php">Alunos</a></li>
+            <li><a href="index.php">Avaliações</a></li>
           </ul>
 
       </div>
@@ -73,10 +71,8 @@
 					<nav id="menu">
   						<ul>
   							<li>
-  								<a href="index.php">Alunos</a>
-  								<a href="projetos.php">Projetos</a>
-  								<a href="index.php">Sobre</a>
-  								<a href="index.php">Alunos</a>
+            <li><a href="projetos.php">Projetos</a></li>
+            <li><a href="index.php">Avaliações</a></li>
   							</li>
   						</ul>
   					</nav>
@@ -114,39 +110,40 @@
             <div id="series">
               <div id="adm_ano" style="display: none;">
               <ul>
-             
-                  <a href="projetoslistnd.php?curso=<?php echo $linha2['curso'];?>" id="" class="btn btn-warning">1º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-warning">2º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-warning">3º ano</a></br>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE ADMINISTRACAO" id="" class="btn btn-warning">1º ano</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE ADMINISTRACAO" id="" class="btn btn-warning">2º ano</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE ADMINISTRACAO" id="" class="btn btn-warning">3º ano</a></br>
               </ul>
               </div>
 
               <div id="info_ano"  style="display: none;">
               <ul>
-                  <a href="projetoslistnd.php" id="" class="btn btn-danger">1º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-danger">2º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-danger">3º ano</a></br>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE INFORMATICA" id="" class="btn btn-danger">1º ano</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE INFORMATICA" id="" class="btn btn-danger">2º ano</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE INFORMATICA" id="" class="btn btn-danger">3º ano</a></br>
               </ul>
               </div>
 
               <div id="quim_ano"  style="display: none;">
               <ul>
-                  <a href="projetoslistnd.php" id="" class="btn btn-success">1º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-success">2º ano</a></br>
-                  <a href="projetoslistnd.php" id="" class="btn btn-success">3º ano</a></br>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE QUIMICA" id="" class="btn btn-success">1º ano</a></br>
+                  <a href="projetoslistnd.php?curso=SEGUNDO ETIM DE QUIMICA" id="" class="btn btn-success">2º ano</a></br>
+                  <a href="projetoslistnd.php?curso=TERCEIRO ETIM DE QUIMICA" id="" class="btn btn-success">3º ano</a></br>
               </ul>
               </div>
+
+              <div id="mec_ano"  style="display: none;">
+              <ul>
+                  <a href="projetoslistnd.php?curso=PRIMEIRO ETIM DE MECANICA" id="" class="btn btn-primary">1º ano</a></br>
+              </ul>
+              </div>
+              <button id="voltar" class="btn btn-outline-secondary" style="margin-left: 39px; padding-left: 85px;padding-right: 85px;"><b>Voltar</b></button>
 
 <?php
 
 }
 ?>
-              <div id="mec_ano"  style="display: none;">
-              <ul>  
-                  <a href="projetoslistnd.php" id="" class="btn btn-primary">1º ano</a></br>
-              </ul>
-              </div>
-              <button id="voltar" class="btn btn-outline-secondary" style="margin-left: 39px; padding-left: 85px;padding-right: 85px;">Voltar</button>
+
             </div>
 
       </section>

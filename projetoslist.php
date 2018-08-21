@@ -58,10 +58,8 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
-            <li><a href="index.php">Alunos</a></li>
-            <li><a href="projetos.html">Projetos</a></li>
-            <li><a href="index.php">Sobre</a></li>
-            <li><a href="index.php">Alunos</a></li>
+                  <a href="projetos.php">Projetos</a>
+                  <a href="#.php">Avaliações</a>
           </ul>
 
       </div>
@@ -71,10 +69,8 @@
 					<nav id="menu">
   						<ul>
   							<li>
-  								<a href="index.php">Alunos</a>
-  								<a href="projetos.php">Projetos</a>
-  								<a href="index.php">Sobre</a>
-  								<a href="index.php">Alunos</a>
+                  <a href="projetos.php">Projetos</a>
+                  <a href="#.php">Avaliações</a>
   							</li>
   						</ul>
   					</nav>
@@ -82,6 +78,16 @@
   			</div>
   		</header>
       <section>
+          <?php
+              include_once('config.php');
+              $mysql = new BancodeDados();
+              $mysql->conecta();
+              $id=(int)$_GET['id'];
+              $consulta="SELECT * FROM projeto where id=$id";
+              $exec=mysqli_query($mysql->con,$consulta);
+              $linha=mysqli_fetch_assoc($exec);
+
+          ?>
           <div class="projtabelas"> 
             <h2 
             style="
@@ -91,19 +97,10 @@
             font-family: sans-serif;
             padding-bottom: 4px;
             padding-left: 7px;">
-            3°ETIM de Administração</h2>
+            <?php echo $linha['curso']; ?></h2>
 
 
-            <?php
-              include_once('config.php');
-              $mysql = new BancodeDados();
-              $mysql->conecta();
-              $id=(int)$_GET['id'];
-              $consulta="SELECT * FROM projeto where id=$id";
-              $exec=mysqli_query($mysql->con,$consulta);
-              $linha=mysqli_fetch_assoc($exec);
 
-            ?>
             <table class="table table-bordered">
                 <tr>
                   <th>Nome do Projeto:</th>
@@ -140,6 +137,10 @@
 
               </tbody>
             </table>
+            <center>
+              <a href="projetos.php" class="btn btn-outline-secondary" style="margin-bottom: 20px;"><b>Voltar</b></a>
+              <a href="projetos.php" class="btn btn-outline-secondary" style="margin-bottom: 20px;"><b>Avaliar</b></a>
+            </center>
           </div>
       </section>
 

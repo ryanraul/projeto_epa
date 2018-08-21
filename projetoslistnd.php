@@ -90,10 +90,8 @@
 					<nav id="menu">
   						<ul>
   							<li>
-  								<a href="index.php">Alunos</a>
   								<a href="projetos.php">Projetos</a>
-  								<a href="index.php">Sobre</a>
-  								<a href="index.php">Alunos</a>
+                  <a href="#.php">Avaliações</a>
   							</li>
   						</ul>
   					</nav>
@@ -132,14 +130,16 @@
                 <tr>
                   <td><?php echo $linha['id'];?></td>
                   <td><?php echo $linha['nome_proj'];?></td>
-                  <td><center><a id="laranbotao" href="projetoslist.php?id=<?php echo $linha['id'];?>" class="btn btn-outline-secondary mexer">Detalhes do projeto  <i id="seta" class="fas fa-angle-double-right"></i></a></center></td>
+                  <td><center><a id="laranbotao" href="projetoslist.php?id=<?php echo $linha['id'];?>" class="btn btn-outline-secondary mexer"><b>Detalhes do projeto</b>  <i id="seta" class="fas fa-angle-double-right"></i></a></center></td>
                 </tr>
                 <?php 
                      }
                  ?>
 
+
               </tbody>
             </table>
+            <center><a href="projetos.php" class="btn btn-outline-secondary"><b>Voltar</b></a></center>
           </div>
       </section>
 
