@@ -1,10 +1,8 @@
 ﻿<?php
 	class BancodeDados{
-		private $host = "sql10.freemysqlhosting.net
-:3306";
+		private $host = "sql10.freemysqlhosting.net:3306";
 		private $user = "sql10253233";
-		private $pass = "I3LMa99yGC
-";
+		private $pass = "I3LMa99yGC";
 		private $banco = "sql10253233";
 		public $con;
 
