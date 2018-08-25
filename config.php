@@ -1,9 +1,11 @@
-<?php
+﻿<?php
 	class BancodeDados{
-		private $host = "localhost";
-		private $user = "root";
-		private $pass = "";
-		private $banco = "epa";
+		private $host = "sql10.freemysqlhosting.net
+:3306";
+		private $user = "sql10253233";
+		private $pass = "I3LMa99yGC
+";
+		private $banco = "sql10253233";
 		public $con;
 
 		function conecta(){
