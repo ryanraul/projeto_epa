@@ -19,10 +19,10 @@
   </head>
   <body>
     <header>
-			<div class="container">
-				<img id="logotipo" src="img/EPA.png" alt="Logotipo">
-			</div>
-			<div class="header-black">
+      <div class="container">
+        <img id="logotipo" src="img/EPA.png" alt="Logotipo">
+      </div>
+      <div class="header-black">
           <button id="btn-bars" type="button"><i class="fas fa-bars"></i></button>
           <div class="d-none d-sm-block">
             <button id="btn-login" type="submit" data-toggle="modal" data-target="#login">Login <i class="fas fa-user-circle"></i></button>
@@ -36,30 +36,31 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
-            <li><a href="#">Alunos</a></li>
-            <li><a href="projetos.php">Projetos</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Alunos</a></li>
+            <li><a href="index.php">Sobre</a></li>
+           
           </ul>
 
       </div>
 
-			<div class="container" style="margin-top: 89px;">
-				<div class="row" style="float: right;">
-					<nav id="menu">
-  						<ul>
-  							<li>
+      <div class="container" style="margin-top: 89px;">
+        <div class="row" style="float: right;">
+          <nav id="menu">
+              <ul>
+                <li>
                   
-  							</li>
-  						</ul>
-  					</nav>
-  				</div>
-  			</div>
-  		</header>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
       <section> 
         <div id="texto" class="texto">
         <h2>O que é o EPA?</h2>
-        <p><strong>EPA</strong> é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+        <p><strong>EPA</strong> é uma feira tecnologica realizada anualmente em algumas etec's do Centro Paula Souza. O evento reúne vários projetos desenvolvidos
+        pelos próprios alunos. Esses projetos possuem temáticas variadas, como por exemplo, física, biologia, química, entre outros. 
+
+        </p>
         </div>
 
         <div class="modal" id="login" tabindex="-1" role="dialog" style="top: 80px;">

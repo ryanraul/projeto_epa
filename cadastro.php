@@ -48,15 +48,16 @@
   </head>
   <body>
     <header>
-			<div class="container">
-				<img id="logotipo" src="img/EPA.png" alt="Logotipo">
-			</div>
+      <div class="container">
+        <img id="logotipo" src="img/EPA.png" alt="Logotipo">
+      </div>
 
 
-			<div class="header-black">
+      <div class="header-black">
+         <center>  <a href="#" style="text-decoration: none; color: white; font-weight: bold;">Usuário: <?php echo $linha['nome']; ?></a> </center>
           <button id="btn-bars" type="button"><i class="fas fa-bars"></i></button>
           <div class="d-none d-sm-block">
-          <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linha['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
+          <a href="sair.php" id="btn-login" style="text-decoration: none;">Sair <i class="fas fa-sign-in-alt"></i></a>
           </div>
           <div class="d-block d-sm-none">
             <a href="sair.php" id="btn-login"><i class="fas fa-sign-in-alt"></i></a>
@@ -66,35 +67,39 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
+                <li>  <a href="projetosalu.php">Projetos</a></li>
             <li><a href="cadastro.php">Cadastrar projeto</a></li>
 
           </ul>
 
       </div>
 
-			<div class="container" style="margin-top: 89px;">
-				<div class="row" style="float: right;">
-					<nav id="menu">
-  						<ul>
-  							<li>
-                  <li><a href="cadastro.php">Cadastrar projeto</a></li>
-  							</li>
-  						</ul>
-  					</nav>
-  				</div>
-  			</div>
-  		</header>
+      <div class="container" style="margin-top: 89px;">
+        <div class="row" style="float: right;">
+          <nav id="menu">
+              <ul>
+                <li>
+                  <li>  <a href="projetosalu.php">Projetos</a>
+                  <a href="cadastro.php">Cadastros</a></li>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
       <section> 
+
         <div id="form">
+    <h5 style="color: gray;">*Campos de preenchimento obrigatório</h5>
           <form action="cadproj.php" method="POST">
             <center><h3>Cadastro do Projeto</h3></center>
             <hr style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: #212529; margin-top: 3px;">  
-                 <b>Nome do Projeto:</b>
-                 <input type="text" name="txtnome"><br> 
-                 <b>Integrantes:</b><br>
-                 <input type="text" name="txtinte1" placeholder=" Nome do integrante 1">
-                 <input type="text" name="txtinte2" placeholder=" Nome do integrante 2">
-                 <input type="text" name="txtinte3" placeholder=" Nome do integrante 3">
+                 <b>* Nome do Projeto:</b>
+                 <input type="text" name="txtnome" required=""><br> 
+                 <b>* Integrantes:</b><br>
+                 <input type="text" name="txtinte1" id="txtinte1" placeholder=" Nome do integrante 1" required="">
+                 <input type="text" name="txtinte2" placeholder=" Nome do integrante 2" required="">
+                 <input type="text" name="txtinte3" placeholder=" Nome do integrante 3" required="">
                  <input type="text" name="txtinte4" class="integ" disabled="" placeholder=" Integrante opcional" required>
                     <img src="img/btoff.png" id="btoff1">
                     <img src="img/bton.png" id="bton1" style="display: none;"><br>
@@ -108,9 +113,9 @@
                       <img id="btoff4" src="img/btoff.png">
                       <img src="img/bton.png" id="bton4" style="display: none;">
                       <br>  
-                 <b>Curso:</b>
+                 <b>* Curso:</b>
                       <input type="text" name="txtcurso" value="<?php echo $linha['nome'] ?>" readonly>
-                 <b>Professor Responsavel:</b><br>
+                 <b>* Professor Responsavel:</b><br>
                  <select name="txtprofresp">
                     <option>Ivo</option>
                     <option>Gabriela</option>
@@ -118,7 +123,7 @@
                     <option>Edimur</option>                  
                  </select ><br>
                  <div class="text-center">
-                  <h3>Escalas:</h3>
+                  <h3>* Escalas:</h3>
                   <b id="aviso" style="color: #dc3545;">*A escalas ainda não foram preenchida</b><br>
                    <div class="btn-group"> 
                      <button type="button" id="btdia1" class="btn btn-danger">DIA 1</button>
@@ -133,17 +138,17 @@
                  <div id="diaum" class="jumbotron" style="display: none; padding-top: 32px; padding-bottom: 32px;">
                   <h3 class="display-7 text-center">Escala 1° dia</h3>
 
-                     <b>Manhã:</b>
+                     <b>* Manhã:</b>
                      <input type="text" name="txtescala1m" class="escala" id="manha1" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required><br>  
-                     <b>Tarde:</b>
+                     <b>* Tarde:</b>
                       <input type="text" name="txtescala1t" class="escala" id="tarde1" placeholder=" Ex: Patricia Silva, Marcos Ramos e Gustavo Sousa" required><br> 
                   </div>
 
                   <div id="diadois" class="jumbotron" style="display: none; padding-top: 32px; padding-bottom: 32px;">
                       <h3 class="display-7 text-center">Escala 2° dia</h3>
-                     <b>Manhã:</b>
+                     <b>* Manhã:</b>
                       <input type="text" name="txtescala2m" class="escala" id="manha2" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required><br> 
-                     <b>Tarde:</b>
+                     <b>* Tarde:</b>
                      <input type="text" name="txtescala2t" class="escala" id="tarde2" placeholder=" Ex: Patricia Silva, Marcos Ramos e Gustavo Sousa" required><br> 
                   </div>
                   <?php
@@ -151,24 +156,24 @@
                   ?>
                   <div id="diaum" class="jumbotron" style="display: none; padding-top: 32px; padding-bottom: 32px;">
                   <h3 class="display-7 text-center">Escala 1° dia</h3>
-                     <b>Noite:</b><br>
+                     <b>* Noite:</b><br>
                       <input type="text" name="txtescala1n" class="escala_noite" id="not1" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required>
                   </div>
 
                   <div id="diadois" class="jumbotron" style="display: none; padding-top: 32px; padding-bottom: 32px;">
                       <h3 class="display-7 text-center">Escala 2° dia</h3> 
-                     <b>Noite:</b><br>
+                     <b>* Noite:</b><br>
                       <input type="text" name="txtescala2n" class="escala_noite" id="not2" placeholder=" Nome dos integrantes que apresentarão neste turno e dia." required><br> 
                   </div>
                   <?php 
                     }
                    ?>
-                 <b>Descrição:</b>
-                 <textarea name="txtdesc"></textarea><br>  
-                 <b>Materiais:</b>
-                 <textarea name="txtmat"></textarea><br>  
-                 <b>Obs:</b>
-                 <textarea name="txtobs"></textarea><br>
+                 <b>* Descrição:</b>
+                 <textarea name="txtdesc" required=""></textarea><br>  
+                 <b>* Materiais:</b>
+                 <textarea name="txtmat" required=""></textarea><br>  
+                 <b>* Obs:</b>
+                 <textarea name="txtobs" required=""></textarea><br>
                  <center><button type="submit" id="btcad" class="btn btn-success">CADASTRAR</button></center>
           </form> 
         </div>
