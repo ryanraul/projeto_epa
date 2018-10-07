@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
@@ -55,7 +53,7 @@
         </div>
       </header>
       <section> 
-        <div id="texto" class="texto">
+        <div id="texto" class="texto" style="top: 0;">
         <h2>O que é o EPA?</h2>
         <p><strong>EPA</strong> é uma feira tecnologica realizada anualmente em algumas etec's do Centro Paula Souza. O evento reúne vários projetos desenvolvidos
         pelos próprios alunos. Esses projetos possuem temáticas variadas, como por exemplo, física, biologia, química, entre outros. 
@@ -95,15 +93,46 @@
                 </div>
           
               </div>
-             
-            </div>
-           </div>
-          </div>
             
       </section>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <footer>
+        <div id="footer">
+          <div class="container" style="padding-top: 10px; color: white;">
+          <div id="desktop">
+              <div class="row">
+                <div class="col" align="left">
+                <h3>EPA Performance</h3>
+                <ul>
+                  <li>
+                    <i><b>Desenvolvido por RJ</b></i>
+                  </li>
+                </ul>
+                </div>
+              <div class="col" align="right" id="suporte">
+                <h3 style="font-size: ;">Precisa de ajuda?</h3>
+                <a href="http://www.facebook.com.br" id="btnfooter" class="btn btn-primary" style="background-color: #e2700d; border-style: solid; border-color: #fff; margin-right: 14px;"><i><b>Entre em contato:</b></i> <i class="fab fa-facebook-square" style="font-size: 40px; "></i></a>      
+              </div>
+            </div>
+          </div>
+          <div id="mobile">
+                <div class="row">
+                  <div class="col" align="left">
+                  <h3>EPA Performance</h3>
+                  <ul>
+                    <li>
+                      <i><b>Desenvolvido por RJ</b></i>
+                    </li>
+                  </ul>
+                  </div>
+                <div class="col" align="left" id="suporte">
+                  <h3 style="font-size: ;">Precisa de ajuda?</h3><br>
+                  <a href="http://www.facebook.com.br" class="btn btn-primary" style="background-color: #e2700d; border-style: solid; border-color: #fff; margin-right: 14px;"><i><b>Entre em contato:</b></i> <i class="fab fa-facebook-square" style="font-size: 30px; "></i></a>      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 
   </body>
 </html>

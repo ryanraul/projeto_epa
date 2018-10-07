@@ -7,7 +7,7 @@
   $usuario=$_SESSION['login'];
   $senha=$_SESSION['senha'];
 
-  $nivel=2;
+  $nivel=3;
 
   if (!isset($_SESSION['login'])  or !isset($_SESSION['senha']) or ($_SESSION['nivel_acesso']!=$nivel)) {
     session_destroy();
@@ -29,7 +29,6 @@
  else{
   $dados = mysqli_fetch_assoc($execur);
 }
-
   }
 ?>
 <!doctype html>
@@ -71,7 +70,6 @@
         <img id="logotipo" src="img/EPA.png" alt="Logotipo">
       </div>
 
-
       <div class="header-black">
           <button id="btn-bars" type="button"><i class="fas fa-bars"></i></button>
           <div class="d-none d-sm-block">
@@ -88,7 +86,6 @@
             <li><a href="projetos.php">Projetos</a></li>
             <li><a href="avaliacoesnd.php">Avaliações</a></li>
           </ul>
-
       </div>
 
       <div class="container" style="margin-top: 89px;">
@@ -96,8 +93,8 @@
           <nav id="menu">
               <ul>
                 <li>
-                  <a href="projetos.php">Projetos</a>
-                  <a href="avaliacoesnd.php">Avaliações</a>
+            <li><a href="projetos.php">Projetos</a></li>
+            <li><a href="avaliacoesnd.php">Avaliações</a></li>
                 </li>
               </ul>
             </nav>
@@ -126,6 +123,7 @@
             ?>
             <table class="table table-bordered" id="tabelaproj">
                 <tr>
+           
                   <th>Id do projeto</th>
                   <th>Nome do projeto</th>
                   <th>Detalhes</th>
@@ -134,13 +132,12 @@
                  while ($linha = mysqli_fetch_assoc($exec)) {
                 ?>
                 <tr>
-                  <form action="projetoslist.php" method="POST">
+                <form action="projetoslist_adm.php" method="POST">
                   <td><input type="hidden" name="id" value="<?php echo $linha['id'];?>"><?php echo $linha['id'];?></td>
                   <td><?php echo $linha['nome_proj'];?></td>
                   <td><center><button type="submit" id="laranbotao" class="btn btn-outline-secondary mexer"><b>Detalhes do projeto</b>  <i id="seta" class="fas fa-angle-double-right"></i></button></center></td>
                 </tr>
                 </form>
-              
                 <?php 
                      }
                  ?>
@@ -148,7 +145,7 @@
 
               </tbody>
             </table>
-            <center><a href="projetos.php" class="btn btn-outline-secondary"><b>Voltar</b></a></center>
+            <center><a href="admin.php" class="btn btn-outline-secondary"><b>Voltar</b></a></center>
           </div>
       </section>
       <footer>

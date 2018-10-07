@@ -17,18 +17,9 @@
   $sql = "SELECT * FROM usuario WHERE login = '$usuario' and senha='$senha'";
   $executador=mysqli_query($mysql->con, $sql);
   $linha=mysqli_fetch_assoc($executador);
-  $curso=$_GET['curso'];
-  $sqlcur = "SELECT * FROM curso where nome_curso='$curso'";
-
-  $execur = mysqli_query($mysql->con, $sqlcur);
- if(mysqli_num_rows($execur)==0){
-
-   header("Location: projetos.php"); exit;
-
- }
- else{
-  $dados = mysqli_fetch_assoc($execur);
-}
+  $idprof = $linha['id'];
+  #$sqlcur = "SELECT * FROM curso where nome_curso='$curso'";
+  ##$execur = mysqli_query($mysql->con, $sqlcur);
 
   }
 ?>
@@ -50,15 +41,21 @@
     <script src="node_modules/popper.js/dist/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <title>EPA</title>
+    <style type="text/css">
+      button{
+        margin-bottom: 5px;
+      }
 
+
+    </style>
     <script type="text/javascript">
       $(document).ready(function(){
 
         $('.mexer').mouseover(function(){
-          $(this).addClass("animated infinite shake");
+          $(this).addClass("animated shake");
         });
         $('.mexer').mouseout(function(){
-          $(this).removeClass("animated infinite shake");
+          $(this).removeClass("animated shake");
         });
 
       });
@@ -67,12 +64,12 @@
   </head>
   <body>
     <header>
-      <div class="container">
-        <img id="logotipo" src="img/EPA.png" alt="Logotipo">
-      </div>
+			<div class="container">
+				<img id="logotipo" src="img/EPA.png" alt="Logotipo">
+			</div>
 
 
-      <div class="header-black">
+			<div class="header-black">
           <button id="btn-bars" type="button"><i class="fas fa-bars"></i></button>
           <div class="d-none d-sm-block">
           <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linha['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
@@ -85,27 +82,29 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
-            <li><a href="projetos.php">Projetos</a></li>
-            <li><a href="avaliacoesnd.php">Avaliações</a></li>
+                
+                  <li><a href="projetos.php">Projetos</a></li>
+                  <li><a href="avaliacoesnd.php">Avaliações</a></li>
+                
           </ul>
 
       </div>
 
-      <div class="container" style="margin-top: 89px;">
-        <div class="row" style="float: right;">
-          <nav id="menu">
-              <ul>
-                <li>
-                  <a href="projetos.php">Projetos</a>
+			<div class="container" style="margin-top: 89px;">
+				<div class="row" style="float: right;">
+					<nav id="menu">
+  						<ul>
+  							<li>
+  								<a href="projetos.php">Projetos</a>
                   <a href="avaliacoesnd.php">Avaliações</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </header>
-      <section>
-          <div class="projtabelas"> 
+  							</li>
+  						</ul>
+  					</nav>
+  				</div>
+  			</div>
+  		</header>
+      <section style="margin-bottom: 13%;">
+          <div class="projavaliados"> 
             <h2 
             style="
             border-bottom-style: solid; 
@@ -114,41 +113,31 @@
             font-family: sans-serif;
             padding-bottom: 4px;
             padding-left: 7px;">
-          <?php echo $dados['nome_curso'];?></h2>
+            Cursos Avaliados</h2>
             <?php
 
               include_once('config.php');
               $mysql = new BancodeDados();
               $mysql->conecta();
 
-              $consulta="SELECT * FROM projeto WHERE curso = '$curso'";
-              $exec=mysqli_query($mysql->con,$consulta);
+              $consulta="SELECT distinct curso FROM avaliacoes WHERE idprof = '$idprof'";
+              $exec=mysqli_query($mysql->con,$consulta);     
             ?>
-            <table class="table table-bordered" id="tabelaproj">
-                <tr>
-                  <th>Id do projeto</th>
-                  <th>Nome do projeto</th>
-                  <th>Detalhes</th>
-                </tr>
-                <?php 
-                 while ($linha = mysqli_fetch_assoc($exec)) {
+              <div id="alinhamento">
+                <?php
+                while ($linha = mysqli_fetch_assoc($exec)) {
+                $nome = $linha['curso'];
+                $sqlSel = "SELECT idesign FROM curso WHERE nome_curso = '$nome'";
+                $exec_curso = mysqli_query($mysql->con,$sqlSel);
+                $linha_curso = mysqli_fetch_assoc($exec_curso);
+                $idbotao = $linha_curso['idesign'];
                 ?>
-                <tr>
-                  <form action="projetoslist.php" method="POST">
-                  <td><input type="hidden" name="id" value="<?php echo $linha['id'];?>"><?php echo $linha['id'];?></td>
-                  <td><?php echo $linha['nome_proj'];?></td>
-                  <td><center><button type="submit" id="laranbotao" class="btn btn-outline-secondary mexer"><b>Detalhes do projeto</b>  <i id="seta" class="fas fa-angle-double-right"></i></button></center></td>
-                </tr>
-                </form>
-              
+                <a class="btn btn-outline-secondary avali_cursos" id="<?php echo $idbotao;?>" href="projetoslistnd.php?curso=<?php echo $nome; ?>"><i><?php echo $nome;?></i></a>
                 <?php 
-                     }
-                 ?>
-
-
-              </tbody>
-            </table>
-            <center><a href="projetos.php" class="btn btn-outline-secondary"><b>Voltar</b></a></center>
+                  }
+                ?>
+              </div>
+            <a href="projetos.php" id="voltar" class="btn btn-outline-secondary"><b>Voltar</b></a>
           </div>
       </section>
       <footer>

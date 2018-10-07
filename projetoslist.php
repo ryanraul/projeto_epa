@@ -16,7 +16,8 @@
   else{
   $sql = "SELECT * FROM usuario WHERE login = '$usuario' and senha='$senha'";
   $executador=mysqli_query($mysql->con, $sql);
-  $linha=mysqli_fetch_assoc($executador);
+  $linhaprof=mysqli_fetch_assoc($executador);
+  $idprof=$linhaprof['id'];
   }
 ?>
 <!doctype html>
@@ -36,19 +37,25 @@
     <script src="node_modules/popper.js/dist/popper.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <title>EPA</title>
+    <style type="text/css">
+      .avali_cursos a{
+      margin-bottom: 5px; 
+      width: 424px;
+    }
+    </style>
 
   </head>
   <body>
     <header>
-			<div class="container">
-				<img id="logotipo" src="img/EPA.png" alt="Logotipo">
-			</div>
+      <div class="container">
+        <img id="logotipo" src="img/EPA.png" alt="Logotipo">
+      </div>
 
 
-			<div class="header-black">
+      <div class="header-black">
           <button id="btn-bars" type="button"><i class="fas fa-bars"></i></button>
           <div class="d-none d-sm-block">
-          <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linha['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
+          <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linhaprof['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
           </div>
           <div class="d-block d-sm-none">
             <a href="sair.php" id="btn-login"><i class="fas fa-sign-in-alt"></i></a>
@@ -58,35 +65,35 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
-                  <a href="projetos.php">Projetos</a>
-                  <a href="#.php">Avaliações</a>
+              <li><a href="projetos.php">Projetos</a></li>
+              <li><a href="#.php">Avaliações</a></li>
           </ul>
 
       </div>
 
-			<div class="container" style="margin-top: 89px;">
-				<div class="row" style="float: right;">
-					<nav id="menu">
-  						<ul>
-  							<li>
+      <div class="container" style="margin-top: 89px;">
+        <div class="row" style="float: right;">
+          <nav id="menu">
+              <ul>
+                <li>
                   <a href="projetos.php">Projetos</a>
                   <a href="#.php">Avaliações</a>
-  							</li>
-  						</ul>
-  					</nav>
-  				</div>
-  			</div>
-  		</header>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
       <section>
           <?php
               include_once('config.php');
               $mysql = new BancodeDados();
               $mysql->conecta();
-              $id=(int)$_GET['id'];
+              $id=$_POST['id'];
               $consulta="SELECT * FROM projeto where id=$id";
               $exec=mysqli_query($mysql->con,$consulta);
               $linha=mysqli_fetch_assoc($exec);
-
+              $nome=$linha['nome_proj'];
           ?>
           <div class="projtabelas"> 
             <h2 
@@ -98,9 +105,6 @@
             padding-bottom: 4px;
             padding-left: 7px;">
             <?php echo $linha['curso']; ?></h2>
-
-
-
             <table class="table table-bordered">
                 <tr>
                   <th>Nome do Projeto:</th>
@@ -134,18 +138,120 @@
                   <th>Observação:</th>
                   <td><?php echo $linha['obs'];?> </td>
                 </tr>
+                  <?php
+              $consulta2="SELECT * FROM avaliacoes where projeto='$nome' and idprof='$idprof' ";
+              $exec2=mysqli_query($mysql->con,$consulta2);
+              $linha2=mysqli_fetch_assoc($exec2);
+              $obsproo=$linha2['obsprof'];
+              if($obsproo!=''){
+              ?>
+                <tr>
+
+                <th>Observação prof:</th>
+                  <form action="editobs.php" method="POST">
+                  <input type="hidden" name="proj" value="<?php echo $linha2['projeto'];?>">
+                <td><textarea name="obs" class="form-control" style="width: 100%;"><?php echo $linha2['obsprof'];?></textarea>
+                  <button class="btn btn-outline-secondary" type="submit"><b>Editar Observação</b></button></td>
+                </form>
+               
+                </tr>
+                <?php
+
+              }
+              else{}
+              ?>
 
               </tbody>
             </table>
-            <center>
-              <a href="projetos.php" class="btn btn-outline-secondary Voltar" style="margin-bottom: 20px;"><b>Voltar</b></a>
-              <a href="projetos.php" class="btn btn-outline-secondary voltar" style="margin-bottom: 20px;"><b>Avaliar</b></a>
+            <center style="margin-bottom: 60px;">
+              <a href="projetos.php" class="btn btn-outline-secondary Voltar"><b>Voltar</b></a>
+              <button class="btn btn-secondary" id="laranbotao" data-toggle="modal" data-target="#avaliar"><b>Avaliar</b></button>
             </center>
           </div>
+          <div class="modal" id="avaliar" tabindex="-1" role="dialog" style="top: 80px;">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" style="text-align: center;">Menção</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <?php
+                    if(mysqli_num_rows($exec2)==0)
+                        {
+                  ?>
+                    <form class="form-group" action="avaliacao.php" method="POST">
+                    <?php 
+                  }
+                  else{
+                    ?>
+                     <form class="form-group" action="editobs.php" method="POST">
+                     <?php
+                   }
+                   ?>
+                    <input type="hidden" name="idprof" value="<?php echo $linhaprof['id']?>">
+                    <input type="hidden" name="proj" value="<?php echo $linha['nome_proj']?>">
+                    <input type="hidden" name="txtcurso" value="<?php echo $linha['curso']?>">
+                   <div class="form-group">
+                      <b>Nota:</b>
+                    <select name="nota" class="form-control" style="font-weight: bold;">
+                      <option value="I">I</option>
+                      <option value="R">R</option>
+                      <option value="B">B</option>
+                      <option value="MB">MB</option>
+                    </select>
+                   <b>Observação do professor:</b>
+                      <textarea name="obs" class="form-control" style="width: 100%; margin-bottom: 30px;"><?php echo $linha2['obsprof'];?></textarea>
+                    </div>
+                <div class="modal-footer">
+                  <input type="submit" id="laranbotao" class="btn btn-secondary" value="Concluir"></button>
+                  <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Fechar</button>
+                </div>
+                    </form>
+              </div> 
+            </div>
+           </div>
+          </div>
       </section>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+            <footer>
+        <div id="footer">
+          <div class="container" style="padding-top: 10px; color: white;">
+          <div id="desktop">
+              <div class="row">
+                <div class="col" align="left">
+                <h3>EPA Performance</h3>
+                <ul>
+                  <li>
+                    <i><b>Desenvolvido por RJ</b></i>
+                  </li>
+                </ul>
+                </div>
+              <div class="col" align="right" id="suporte">
+                <h3 style="font-size: ;">Precisa de ajuda?</h3>
+                <a href="http://www.facebook.com.br" id="btnfooter" class="btn btn-primary" style="background-color: #e2700d; border-style: solid; border-color: #fff; margin-right: 14px;"><i><b>Entre em contato:</b></i> <i class="fab fa-facebook-square" style="font-size: 40px; "></i></a>      
+              </div>
+            </div>
+          </div>
+          <div id="mobile">
+                <div class="row">
+                  <div class="col" align="left">
+                  <h3>EPA Performance</h3>
+                  <ul>
+                    <li>
+                      <i><b>Desenvolvido por RJ</b></i>
+                    </li>
+                  </ul>
+                  </div>
+                <div class="col" align="left" id="suporte">
+                  <h3 style="font-size: ;">Precisa de ajuda?</h3><br>
+                  <a href="http://www.facebook.com.br" class="btn btn-primary" style="background-color: #e2700d; border-style: solid; border-color: #fff; margin-right: 14px;"><i><b>Entre em contato:</b></i> <i class="fab fa-facebook-square" style="font-size: 30px; "></i></a>      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
   </body>
 </html>

@@ -1,9 +1,9 @@
 ﻿<?php
 	class BancodeDados{
-		private $host = "sql10.freemysqlhosting.net:3306";
-		private $user = "sql10253233";
-		private $pass = "I3LMa99yGC";
-		private $banco = "sql10253233";
+		private $host = "localhost";
+		private $user = "root";
+		private $pass = "";
+		private $banco = "epa";
 		public $con;
 
 		function conecta(){
@@ -57,6 +57,60 @@
 			}
 			
 		}
+        function sqleditproj($string){
+			$resultado = mysqli_query($this->con,$string);
+			if(!$resultado){
+
+				echo'<input type="button" onclick="window.location'."'admin.php'".';"value="voltar"><br><br>';
+				die('Query inválido: '.mysqli_error($this->con));
+
+			}else{
+
+			echo ' <script type = "text/javascript">
+        alert("Projeto editado com sucesso!");
+      </script>
+        <meta http-equiv="refresh" content="0; url=admin.php">';
+
+			}
+			
+		}
+
+		function sqlobs($string){
+			$resultado = mysqli_query($this->con,$string);
+			if(!$resultado){
+
+				echo'<input type="button" onclick="window.location'."'cadastro.php'".';"value="voltar"><br><br>';
+				die('Query inválido: '.mysqli_error($this->con));
+
+			}else{
+
+			echo ' <script type = "text/javascript">
+        alert("Sucesso!");
+      </script>
+        <meta http-equiv="refresh" content="0; url=projetos.php">';
+
+			}
+			
+		}
+
+		function sqlavaliar($string){
+			$resultado = mysqli_query($this->con,$string);
+			if(!$resultado){
+
+				echo'<input type="button" onclick="window.location'."'projetos.php'".';"value="voltar"><br><br>';
+				die('Query inválido: '.mysqli_error($this->con));
+
+			}else{
+
+			echo ' <script type = "text/javascript">
+        alert("Projeto avaliado com sucesso!");
+      </script>
+        <meta http-equiv="refresh" content="0; url=projetos.php">';
+
+			}
+			
+		}
+
 
 
 			

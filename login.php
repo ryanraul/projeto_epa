@@ -1,3 +1,17 @@
+	<?php
+
+if(!function_exists("antisql")) {
+function antisql($campo, $adicionaBarras = false) {
+// remove palavras que contenham sintaxe sql
+$campo = preg_replace("/(from|alter table|select|insert|delete|update|were|drop table|show tables|#|\*|--|\\\\)/i","Anti Sql-Injection  !",$campo);
+$campo = trim($campo);//limpa espaços vazio
+$campo = strip_tags($campo);//tira tags html e php
+if($adicionaBarras || !get_magic_quotes_gpc())
+$campo = addslashes($campo);
+return $campo;
+} }
+?>
+
 <?php  
 	include_once('config.php');
 	$mysql = new BancodeDados();
@@ -6,7 +20,10 @@
 				
 
 	$usuario = $_POST['txtLogin'];
+	$usuario = antisql($usuario);
+
 	$senha = sha1($_POST['txtSenha']);
+	$senha = antisql($senha);
 
 	 $consulta = "SELECT * FROM usuario WHERE login = '$usuario'  AND senha ='$senha'";
 
@@ -26,7 +43,12 @@
 
 	else if($nivel_acesso==1){
 
-		header("Location: cadastro.php");
+		header("Location: indexlater.php");
+
+	}
+	else if($nivel_acesso==3){
+
+		header("Location: admin.php");
 
 	}
 
