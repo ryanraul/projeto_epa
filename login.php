@@ -43,7 +43,7 @@ return $campo;
 
 	else if($nivel_acesso==1){
 
-		header("Location: indexlater.php");
+		header("Location: projetosalu.php");
 
 	}
 	else if($nivel_acesso==3){

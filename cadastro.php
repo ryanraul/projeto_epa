@@ -54,10 +54,10 @@
 
 
       <div class="header-black">
-         <center>  <a href="#" style="text-decoration: none; color: white; font-weight: bold;">Usuário: <?php echo $linha['nome']; ?></a> </center>
+         
           <button id="btn-bars" type="button"><i class="fas fa-bars"></i></button>
           <div class="d-none d-sm-block">
-          <a href="sair.php" id="btn-login" style="text-decoration: none;">Sair <i class="fas fa-sign-in-alt"></i></a>
+          <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linha['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
           </div>
           <div class="d-block d-sm-none">
             <a href="sair.php" id="btn-login"><i class="fas fa-sign-in-alt"></i></a>
@@ -179,9 +179,43 @@
         </div>
 
       </section>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+      <footer>
+        <div id="footer">
+          <div class="container" style="padding-top: 10px; color: white;">
+          <div id="desktop">
+              <div class="row">
+                <div class="col" align="left">
+                <h3>EPA Performance</h3>
+                <ul>
+                  <li>
+                    <i><b>Desenvolvido por RJ</b></i>
+                  </li>
+                </ul>
+                </div>
+              <div class="col" align="right" id="suporte">
+                <h3 style="font-size: ;">Precisa de ajuda?</h3>
+                <a href="http://www.facebook.com.br" id="btnfooter" class="btn btn-primary" style="background-color: #e2700d; border-style: solid; border-color: #fff; margin-right: 14px;"><i><b>Entre em contato:</b></i> <i class="fab fa-facebook-square" style="font-size: 40px; "></i></a>      
+              </div>
+            </div>
+          </div>
+          <div id="mobile">
+                <div class="row">
+                  <div class="col" align="left">
+                  <h3>EPA Performance</h3>
+                  <ul>
+                    <li>
+                      <i><b>Desenvolvido por RJ</b></i>
+                    </li>
+                  </ul>
+                  </div>
+                <div class="col" align="left" id="suporte">
+                  <h3 style="font-size: ;">Precisa de ajuda?</h3><br>
+                  <a href="http://www.facebook.com.br" class="btn btn-primary" style="background-color: #e2700d; border-style: solid; border-color: #fff; margin-right: 14px;"><i><b>Entre em contato:</b></i> <i class="fab fa-facebook-square" style="font-size: 30px; "></i></a>      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
   </body>
 </html>
