@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/bootstrap.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+<link rel="stylesheet" href="web-fonts-with-css/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/style.css">
     <link rel="stylesheet" href="node_modules/bootstrap/compiler/style_mobile.css">
     <script src="node_modules/jquery/dist/jquery.js"></script>
@@ -74,9 +74,7 @@
                 <div class="text-center">
                   <div class="btn-group"> 
             <form class="form-group" action="login.php" method="POST">
-                    <!--<button type="button" id="laranbotao" name="btaluno" class="btn btn-outline-secondary"><i class="fas fa-user-graduate"></i> Aluno</button>
-                    <button type="button" id="btprofessor" class="btn btn-outline-dark"  ><i class="fas fa-chalkboard-teacher"></i> Professor</button>-->
-                  </div>
+                </div>
                 </div>
                 <div id="login">
                    
