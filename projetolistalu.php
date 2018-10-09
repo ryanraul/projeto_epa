@@ -48,7 +48,7 @@
       <div class="header-black">
           <button id="btn-bars" type="button"><i class="fas fa-bars"></i></button>
           <div class="d-none d-sm-block">
-           <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linha2['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
+           <a href="sair.php" id="btn-login" style="text-decoration: none;"><?php echo $linha['nome']; ?> - Sair <i class="fas fa-sign-in-alt"></i></a>
           </div>
           <div class="d-block d-sm-none">
             <a href="sair.php" id="btn-login"><i class="fas fa-sign-in-alt"></i></a>

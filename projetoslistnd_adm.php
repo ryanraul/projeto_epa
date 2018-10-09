@@ -83,8 +83,7 @@
       <div id="menu-mobile-mask" class="d-block d-sm-none"></div>
       <div id="menu-mobile" class="d-block d-sm-none">
           <ul class="list-unstyled" id="lista">
-            <li><a href="projetos.php">Projetos</a></li>
-            <li><a href="avaliacoesnd.php">Avaliações</a></li>
+            <li><a href="admin.php">Projetos</a></li>
           </ul>
       </div>
 
@@ -93,8 +92,7 @@
           <nav id="menu">
               <ul>
                 <li>
-            <li><a href="projetos.php">Projetos</a></li>
-            <li><a href="avaliacoesnd.php">Avaliações</a></li>
+           <li><a href="admin.php">Projetos</a></li>
                 </li>
               </ul>
             </nav>

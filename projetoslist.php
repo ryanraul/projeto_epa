@@ -94,6 +94,10 @@
               $exec=mysqli_query($mysql->con,$consulta);
               $linha=mysqli_fetch_assoc($exec);
               $nome=$linha['nome_proj'];
+              $sql="SELECT * FROM avaliacoes where projeto='$nome' and idprof=$idprof";
+              $execsql=mysqli_query($mysql->con,$sql);
+              $nota=mysqli_fetch_assoc($execsql);
+
           ?>
           <div class="projtabelas"> 
             <h2 
@@ -108,7 +112,7 @@
             <table class="table table-bordered">
                 <tr>
                   <th>Nome do Projeto:</th>
-                  <td><?php echo $linha['nome_proj'];?></td>
+                  <td><?php echo $linha['nome_proj'];?> </td>
                 </tr>
                 <tr>
                   <th>Integrantes:</th>
@@ -172,7 +176,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" style="text-align: center;">Menção</h5>
+                <h5 class="modal-title" style="text-align: center;">Menção - <?php echo $nota['nota'];?> (<i>Menção atual</i>)</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>

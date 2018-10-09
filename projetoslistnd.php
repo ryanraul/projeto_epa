@@ -28,6 +28,7 @@
  }
  else{
   $dados = mysqli_fetch_assoc($execur);
+  $id=$dados['id'];
 }
 
   }
